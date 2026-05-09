@@ -7,7 +7,7 @@
   },
   {
     "name": "Oranges",
-    "image": "http://orfiagro.com/wp-content/uploads/2020/10/orange-1hoca2l.jpg",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR1d55KRpVZtNZDCGxi193hqjtIhz1Nb-OBQ&s",
     "price": 5,
     "category": "fruits"
   },
@@ -31,7 +31,7 @@
   },
   {
     "name": "Brinjol",
-    "image": "https://www.jiomart.com/images/product/original/590004102/brinjal-purple-striped-500-g-0-20201118.jpg",
+    "image": "https://superbhyper.co.za/wp-content/uploads/2023/08/BRINJOL-LONG-large.jpg",
     "price": 6,
     "category": "vegetables"
   }

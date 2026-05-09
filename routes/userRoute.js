@@ -1,0 +1,28 @@
+const express = require('express');
+const UserModel = require('../models/userModel');
+const router = express.Router();
+
+router.post('/login', async (req, res) => {
+    try {
+        const user = await UserModel.findOne({ userId: req.body.userId, password: req.body.password, verified: true })
+        if (user) {
+            res.send('Login succesfull')
+        } else {
+            res.status(400).json({ message: 'Login Failed', user });
+        }
+    } catch (error) {
+        res.status(400).send(error);
+    }
+});
+
+router.post('/register', async (req, res) => {
+    try {
+        const newuser = new UserModel({ ...req.body, verified: false })
+        await newuser.save()
+        res.send('User Registered succesfully')
+    } catch (error) {
+        res.status(400).send(error);
+    }
+});
+
+module.exports = router
