@@ -91,7 +91,7 @@ function Bills() {
     }, [])
 
     const handlePrint = useReactToPrint({
-        content: () => componentRef.current,
+        contentRef: componentRef,
     });
 
     return (
@@ -112,7 +112,7 @@ function Bills() {
                     footer={false}
                     width={800}
                 >
-                    <div className="bill-model" ref={componentRef}>
+                    <div className="bill-model p-3" ref={componentRef}>
                         <div className="d-flex justify-content-between bill-header pb-2">
                             <div>
                                 <h1><b>DODY MARKET</b></h1>
