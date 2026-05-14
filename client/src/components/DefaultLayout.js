@@ -17,9 +17,10 @@ import { useSelector } from 'react-redux';
 const { Header, Sider, Content } = Layout;
 
 const DefaultLayout = (props) => {
-    const navigate = useNavigate()
+
     const [collapsed, setCollapsed] = useState(false);
-    const { cartItems, loading } = useSelector(state => state.rootReducer)
+    const { cartItems, loading } = useSelector(state => state.rootReducer);
+    const navigate = useNavigate()
     const toggle = () => {
         setCollapsed(!collapsed);
     };
@@ -33,6 +34,11 @@ const DefaultLayout = (props) => {
             key: "/home",
             icon: <HomeOutlined />,
             label: <Link to="/home">Home</Link>,
+        },
+        {
+            key: "/cart",
+            icon: <ShoppingCartOutlined />,
+            label: <Link to="/cart">Cart</Link>,
         },
         {
             key: "/bills",
@@ -52,6 +58,10 @@ const DefaultLayout = (props) => {
         {
             key: "/logout",
             icon: <LogoutOutlined />,
+            onClick: ()=>{ 
+                localStorage.removeItem('pos-user')
+                navigate('/login')
+            },
             label: "Logout",
         },
     ];

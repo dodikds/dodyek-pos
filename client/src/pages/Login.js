@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Col, Form, Input, message, Row } from "antd";
 import '../resources/authentication.css';
 import axios from 'axios';
@@ -23,6 +23,11 @@ function Login() {
             message.error('Something went wrong')
         })
     }
+
+    useEffect(() => {
+        if(localStorage.getItem('pos-user'))
+            navigate('/home')
+    }, [])
 
     return (
         <div className="authentication">

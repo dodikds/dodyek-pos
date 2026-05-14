@@ -60,3 +60,28 @@ input:focus {
 .selected-category {
     border: 3px solid rgb(3, 38, 66);
 }
+
+.subtotal h3 {
+    color: rgb(0, 133, 18);
+    font-size: 35px;
+    padding: 15px;
+}
+
+/* ====================================== Bill Styling */
+
+.bill-header {
+    border-bottom: 2px dotted rgb(77, 76, 76);
+}
+
+.bill-model h1 {
+    font-size: 30px;
+}
+.bill-model p {
+    margin-top: 0;
+    margin-bottom: 0 !important;
+    
+}
+
+.dotted-border {
+    border-bottom: 2px dotted rgb(77, 76, 76);
+}

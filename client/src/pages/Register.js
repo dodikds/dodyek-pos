@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button, Col, Form, Input, message, Row } from "antd";
 import '../resources/authentication.css';
 import axios from 'axios';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {useDispatch} from 'react-redux';
 
 function Register() {
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const onFinish=(values)=>{
         dispatch({type: 'showLoading'})
         axios.post('/api/users/register', values).then((res)=>{
@@ -17,6 +18,10 @@ function Register() {
             message.error('Something went wrong')
         })
     }
+    useEffect(() => {
+        if(localStorage.getItem('pos-user'))
+            navigate('/home')
+    }, [])
 
     return (
         <div className="authentication">
