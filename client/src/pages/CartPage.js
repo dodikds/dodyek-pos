@@ -4,11 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import DefaultLayout from '../components/DefaultLayout';
 import axios from 'axios';
 import { DeleteOutlined, PlusCircleOutlined, MinusCircleOutlined } from '@ant-design/icons';
+import { useNavigate } from "react-router-dom";
 
 function CartPage() {
     const { cartItems } = useSelector(state => state.rootReducer)
     const [billChargeModal, setBillChargeModal] = useState(false)
     const [subTotal, setSubTotal] = useState(0)
+    const navigate = useNavigate()
     const dispatch = useDispatch()
 
     const increaseQuantity = (record) => {
@@ -75,6 +77,7 @@ function CartPage() {
 
         axios.post('/api/bills/charge-bill', reqObject).then(() => {
             message.success("Bill Charged Successfully")
+            navigate('/bills')
         }).catch(() => {
             message.success("Something went wrong")
         })
