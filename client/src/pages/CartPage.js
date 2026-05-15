@@ -86,7 +86,7 @@ function CartPage() {
 
     return <DefaultLayout>
         <h3>Cart Page</h3>
-        <Table columns={columns} dataSource={cartItems} bordered />
+        <Table columns={columns} dataSource={cartItems} bordered pagination={false} />
         <hr />
         <div className='d-flex justify-content-end flex-column align-items-end'>
             <div className='subtotal'>

@@ -133,7 +133,7 @@ function Bills() {
                         </div>
                         <Table  dataSource={selectedBill.cartItems} columns={cartcolumns} pagination={false}/>
 
-                        <div className="dotted-border mt-2">
+                        <div className="dotted-border">
                             <p><b>SUB TOTAL</b> : {selectedBill.subTotal}</p>
                             <p><b>Tax</b> : {selectedBill.tax}</p> 
                         </div>
@@ -142,7 +142,7 @@ function Bills() {
                             <h2><b>GRAND TOTAL : {selectedBill.totalAmount}</b></h2>
                         </div>
 
-                        <div className="dotted-border mt-2"></div>
+                        <div className="dotted-border"></div>
 
                         <div className="text-center">
                             <p>Thanks</p>
