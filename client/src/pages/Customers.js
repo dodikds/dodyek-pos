@@ -2,10 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import DefaultLayout from "../components/DefaultLayout";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { DeleteOutlined, EyeOutlined } from '@ant-design/icons';
-import { Button, Form, Input, message, Modal, Select, Table } from "antd";
-import ReactToPrint from "react-to-print";
-import { useReactToPrint } from "react-to-print";
+// import { DeleteOutlined, EyeOutlined } from '@ant-design/icons';
+// import { Button, Form, Input, message, Modal, Select, Table } from "antd";
+import { Table } from "antd";
 
 function Customers() {
     const componentRef = useRef();
