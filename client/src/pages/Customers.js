@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import DefaultLayout from "../components/DefaultLayout";
 import axios from "axios";
 import { useDispatch } from "react-redux";
@@ -7,14 +7,14 @@ import { useDispatch } from "react-redux";
 import { Table } from "antd";
 
 function Customers() {
-    const componentRef = useRef();
+    // const componentRef = useRef();
     const [billsData, setBillsData] = useState([])
     
     const dispatch = useDispatch()
     const getAllBills = () => {
         dispatch({ type: 'showLoading' })
         axios
-            .get('http://localhost:5000/api/bills/get-all-bills')
+            .get('https://shey-pos.onrender.com/api/bills/get-all-bills')
             .then((response) => {
                 dispatch({ type: 'hideLoading' })
                 const data = response.data
@@ -45,6 +45,7 @@ function Customers() {
 
     useEffect(() => {
         getAllBills()
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
 

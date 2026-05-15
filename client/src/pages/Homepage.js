@@ -27,7 +27,7 @@ function Homepage() {
     const getAllitems=()=>{
         dispatch({type:'showLoading'})
         axios
-            .get('http://localhost:5000/api/items/get-all-items')
+            .get('https://shey-pos.onrender.com/api/items/get-all-items')
             .then((response)=>{
                 dispatch({type:'hideLoading'})
                 setItemsData(response.data)

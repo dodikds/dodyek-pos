@@ -63,7 +63,7 @@ function CartPage() {
     }, [cartItems])
 
     const onFinish = (values) => {
-        const user = JSON.parse(localStorage.getItem('pos-user'));
+        // const user = JSON.parse(localStorage.getItem('pos-user'));
 
         const reqObject = {
             ...values,

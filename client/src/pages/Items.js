@@ -13,7 +13,7 @@ function Items() {
     const getAllItems = () => {
         dispatch({ type: 'showLoading' })
         axios
-            .get('http://localhost:5000/api/items/get-all-items')
+            .get('https://shey-pos.onrender.com/api/items/get-all-items')
             .then((response) => {
                 dispatch({ type: 'hideLoading' })
                 setItemsData(response.data)
@@ -27,7 +27,7 @@ function Items() {
     const deleteItem = (record) => {
         dispatch({ type: 'showLoading' })
         axios
-            .post('http://localhost:5000/api/items/delete-item', {
+            .post('https://shey-pos.onrender.com/api/items/delete-item', {
                 itemId : record._id
             })
             .then((response) => {
@@ -81,7 +81,7 @@ function Items() {
         dispatch({ type: 'showLoading' })
         if (editingItem === null) {
             axios
-            .post('http://localhost:5000/api/items/add-item', values)
+            .post('https://shey-pos.onrender.com/api/items/add-item', values)
             .then((response) => {
                 dispatch({ type: 'hideLoading' })
                 message.success('Item added succesfully')
@@ -95,7 +95,7 @@ function Items() {
             });
         } else {
             axios
-            .post('http://localhost:5000/api/items/edit-item', { ...values, itemId : editingItem._id })
+            .post('https://shey-pos.onrender.com/api/items/edit-item', { ...values, itemId : editingItem._id })
             .then((response) => {
                 dispatch({ type: 'hideLoading' })
                 message.success('Item edited succesfully')
