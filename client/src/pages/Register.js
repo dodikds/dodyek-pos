@@ -10,7 +10,7 @@ function Register() {
     const navigate = useNavigate()
     const onFinish=(values)=>{
         dispatch({type: 'showLoading'})
-        axios.post('/api/users/register', values).then((res)=>{
+        axios.post('https://shey-pos.onrender.com/api/users/register', values).then((res)=>{
             dispatch({type: 'hideLoading'})
             message.success('Registration successfull, please wait for verification')
         }).catch(()=>{

@@ -13,7 +13,7 @@ function Login() {
     const onFinish=(values)=>{
         console.log(values)
         dispatch({type: 'showLoading'})
-        axios.post('/api/users/login', values).then((res)=>{
+        axios.post('https://shey-pos.onrender.com/api/users/login', values).then((res)=>{
             dispatch({type: 'hideLoading'})
             message.success('Login successfull')
             localStorage.setItem('pos-user', JSON.stringify(res.data))
