@@ -75,7 +75,7 @@ function CartPage() {
             // userId: user.data._id
         }
 
-        axios.post('/api/bills/charge-bill', reqObject).then(() => {
+        axios.post('https://shey-pos.onrender.com/api/bills/charge-bill', reqObject).then(() => {
             message.success("Bill Charged Successfully")
             navigate('/bills')
         }).catch(() => {
