@@ -76,7 +76,7 @@ const DefaultLayout = (props) => {
             )}
             <Sider trigger={null} collapsible collapsed={collapsed}>
                 <div className="logo">
-                    <h3>{ collapsed ? 'DP' : 'DODY POS' }</h3>
+                    <h3>{ collapsed ? 'DP' : 'DODYEK POS' }</h3>
                 </div>
 
                 <Menu
